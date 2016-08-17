@@ -19,3 +19,16 @@ standalone版本比较早，是在电吉他发布后4天制作的（在google代
 前端经过多年发展，现在回头看当时的作品，代码有众多的缺陷。最大的缺陷莫过于没有模块化。所以最近一有时间就想着用es6+react对代码进行重构。
 
 现在仅仅只支持琴弦动画。
+
+## How to install
+Standalone版本直接双击test.html就可以运行
+
+es6版本用了webpack+hot deploy plugin作为开发环境
+
+1）进入webpack.config.js的目录
+
+2) npm install
+
+3) npm run hot-dev-server
+
+4) open browser and input http://localhost:8080

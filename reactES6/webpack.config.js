@@ -29,7 +29,7 @@ module.exports = {
 			test : /\.less/,
 			loader : 'style-loader!css-loader!less-loader'
 		}, {
-			test : [ /\.png$/, /\.jpg$/, /\.jpeg$/, /\.gif$/, /\.svg$/ ],
+			test : [ /\.png$/, /\.jpg$/, /\.jpeg$/, /\.gif$/, /\.svg$/, /\.ogg$/ ],
 			loader : "file-loader"
 		}]
 	},

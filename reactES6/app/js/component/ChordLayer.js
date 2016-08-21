@@ -8,6 +8,10 @@ import configs from '../config/ChordConfig';
 
 import Chord from '../part/Chord';
 
+import EventManager from '../util/EventManager';
+import Events from '../util/Events';
+
+
 const panelStyle = {
 	position: "absolute",
 	zIndex: 1
@@ -69,6 +73,9 @@ export default class ChordLayer extends React.Component {
 
             if (chord.hitTest(this.lastY, mouseX, mouseY)) {
                 chord.play(this.lastY > mouseY, mouseX);
+                EventManager.fire(Events.PLAY_SOUND, {
+                    id: chord.id
+                });
             }
         }
 

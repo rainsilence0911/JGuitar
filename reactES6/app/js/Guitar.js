@@ -6,8 +6,8 @@ import OperationPanel from './component/OperationPanel';
 import AudioPlayer from './component/AudioPlayer';
 
 
-let layoutStyle = {
-	width: "465px",
+const layoutStyle = {
+    width: "465px",
     height: "176px",
     position: "relative",
     border: "solid 1px black"

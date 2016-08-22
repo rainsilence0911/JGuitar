@@ -1,3 +1,3 @@
 export default {
-	PLAY_SOUND: "play-sound"
+    PLAY_SOUND: "play-sound"
 };

@@ -1,51 +1,51 @@
 
 if (!Object.assign) {
-	Object.assign = function() {
+    Object.assign = function() {
 
-		if (arguments.length === 0) {
-			return null;
-		}
+        if (arguments.length === 0) {
+            return null;
+        }
 
-		let target = arguments[0] || {};
+        let target = arguments[0] || {};
 
-		for (var i = 1; i < arguments.length; i++) {
+        for (var i = 1; i < arguments.length; i++) {
 
-			var source = arguments[i];
+            var source = arguments[i];
 
-			for (var name in source) {
-				target[name] = source[name];
-			}
-		}
+            for (var name in source) {
+                target[name] = source[name];
+            }
+        }
 
-		return target;
-	};
+        return target;
+    };
 }
 
 if (!window.Symbol) {
-	window.Symbol = {
-		iterator: "Symbol.iterator"
-	};
+    window.Symbol = {
+        iterator: "Symbol.iterator"
+    };
 
-	Array.prototype[Symbol.iterator] = function() {
+    Array.prototype[Symbol.iterator] = function() {
 
-		var target = this;
+        var target = this;
 
-		var index = 0;
+        var index = 0;
 
-		return {
-			next: function() {
+        return {
+            next: function() {
 
-				var value = target[index];
+                var value = target[index];
 
-				index++;
+                index++;
 
-				return {
-					value: value,
-					done: index >= target.length
-				};
-			}
-		};
+                return {
+                    value: value,
+                    done: index >= target.length
+                };
+            }
+        };
 
-	};
+    };
 
 }

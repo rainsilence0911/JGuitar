@@ -6,11 +6,11 @@ import EventManager from '../util/EventManager';
 import Events from '../util/Events';
 
 export default class AudioPlayer extends React.Component {
-	constructor() {
+    constructor() {
         super();
         let list = [];
         for (let i = 0; i < configs.length; i++) {
-        	list.push(configs[i].audio);
+            list.push(configs[i].audio);
         }
         this.soundList = list;
 
@@ -19,31 +19,31 @@ export default class AudioPlayer extends React.Component {
 
     handlePlay(e) {
 
-    	let id = e.id.replace("chord-", "sound-");
+        let id = e.id.replace("chord-", "sound-");
 
-    	let audioTag = this.refs[id];
+        let audioTag = this.refs[id];
 
-    	if (audioTag.paused) {
-			audioTag.play();
-		} else {
-			audioTag.currentTime = 0;
-		}
+        if (audioTag.paused) {
+            audioTag.play();
+        } else {
+            audioTag.currentTime = 0;
+        }
     }
 
     getKey(index) {
-    	return `sound-${index}`;
+        return `sound-${index}`;
     }
 
     render() {
-    	return (
-    		<div id="audioContainer">
-    			{
-    				this.soundList.map(function(soundUrl, index) {
-    					let key = this.getKey(index);
-    					return (<audio src={soundUrl} key={key} ref={key}></audio>);
-    				}, this)
-    			}
-    		</div>
-    	);
+        return (
+            <div id="audioContainer">
+                {
+                    this.soundList.map(function(soundUrl, index) {
+                        let key = this.getKey(index);
+                        return (<audio src={soundUrl} key={key} ref={key}></audio>);
+                    }, this)
+                }
+            </div>
+        );
     }
 }

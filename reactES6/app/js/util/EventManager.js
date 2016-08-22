@@ -3,28 +3,26 @@ let eventMapper = {};
 
 export default class EventManager {
 
-	static register(eventName, handler) {
+    static register(eventName, handler) {
 
-		if (!eventMapper[eventName]) {
-			eventMapper[eventName] = [];
-		}
+        if (!eventMapper[eventName]) {
+            eventMapper[eventName] = [];
+        }
 
-		eventMapper[eventName].push(handler);
+        eventMapper[eventName].push(handler);
+    }
 
-	}
+    static fire(eventName, params) {
 
-	static fire(eventName, params) {
+        if (!eventMapper[eventName]) {
+            return;
+        }
 
-		if (!eventMapper[eventName]) {
-			return;
-		}
+        let handlers = eventMapper[eventName];
 
-		let handlers = eventMapper[eventName];
+        for (let i = 0; i < handlers.length; i++) {
+            handlers[i](params);
+        }
 
-		for (let i = 0; i < handlers.length; i++) {
-			handlers[i](params);
-		}
-
-	}
-
+    }
 }

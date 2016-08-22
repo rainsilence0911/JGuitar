@@ -20,12 +20,12 @@ export default class Guitar extends React.Component {
     }
     render() {
         return (
-        	<div style={layoutStyle}>
-        		<Background/>
-        		<ChordLayer width={layoutStyle.width} height={layoutStyle.height}/>
+            <div style={layoutStyle}>
+                <Background/>
+                <ChordLayer width={layoutStyle.width} height={layoutStyle.height}/>
                 <OperationPanel/>
                 <AudioPlayer/>
-        	</div>
-		);
+            </div>
+        );
     }
 }

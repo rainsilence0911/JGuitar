@@ -74,9 +74,9 @@ export default class ChordLayer extends React.Component {
 
     render() {
         return (
-			<canvas ref="canvas" className={style.chordPanel}
+            <canvas ref="canvas" className={style.chordPanel}
                 onMouseMove={this.handleMouseMove.bind(this)}
                 width={this.state.width} height={this.state.height}></canvas>
-		);
+        );
     }
 }

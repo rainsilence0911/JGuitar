@@ -8,7 +8,7 @@ export default class Background extends React.Component {
     }
     render() {
         return (
-			<div className={style.background}></div>
-		);
+            <div className={style.background}></div>
+        );
     }
 }

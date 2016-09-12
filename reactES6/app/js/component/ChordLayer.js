@@ -8,19 +8,12 @@ import configs from '../config/ChordConfig';
 
 import Chord from '../part/Chord';
 
-import EventManager from '../util/EventManager';
-import Events from '../util/Events';
-
-
-const panelStyle = {
-    position: "absolute",
-    zIndex: 1
-};
+import style from '../../css/style.css';
 
 export default class ChordLayer extends React.Component {
     constructor(param) {
         super();
-        this.layout = {
+        this.state = {
             width: param.width,
             height: param.height
         };
@@ -29,7 +22,7 @@ export default class ChordLayer extends React.Component {
     }
 
     componentDidMount() {
-        let graphHelper = new GraphHelper(this.refs.canvas);
+    	let graphHelper = new GraphHelper(this.refs.canvas);
 
         let timer = new Timer();
 
@@ -53,9 +46,9 @@ export default class ChordLayer extends React.Component {
 
     handleMouseMove(e) {
 
-        let event = e.nativeEvent;
+    	let event = e.nativeEvent;
 
-        let {x: mouseX, y: mouseY} = PositionUtil.getLayerXY(event, this.refs.canvas);
+    	let {x: mouseX, y: mouseY} = PositionUtil.getLayerXY(event, this.refs.canvas);
 
         if (!this.lastY) {
             this.lastY = mouseY;
@@ -73,9 +66,6 @@ export default class ChordLayer extends React.Component {
 
             if (chord.hitTest(this.lastY, mouseX, mouseY)) {
                 chord.play(this.lastY > mouseY, mouseX);
-                EventManager.fire(Events.PLAY_SOUND, {
-                    id: chord.id
-                });
             }
         }
 
@@ -84,9 +74,9 @@ export default class ChordLayer extends React.Component {
 
     render() {
         return (
-            <canvas ref="canvas" style={panelStyle}
+			<canvas ref="canvas" className={style.chordPanel}
                 onMouseMove={this.handleMouseMove.bind(this)}
-                width={this.layout.width} height={this.layout.height}></canvas>
-        );
+                width={this.state.width} height={this.state.height}></canvas>
+		);
     }
 }

@@ -1,0 +1,52 @@
+
+.containerLayout {
+    position: relative;
+    border: solid 1px black;
+}
+
+.background {
+    background-image: url(../images/guitar.png);
+    background-repeat: no-repeat;
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.chordPanel {
+    position: absolute;
+    z-index: 1;
+}
+
+.recordButton {
+    background-image: url(../images/guitar.png);
+    z-index: 3;
+    position: absolute;
+    cursor: pointer;
+    left: 208px;
+    top: 126px;
+    width: 62px;
+    height: 35px;
+}
+
+.statusBoard {
+    position: absolute;
+    left: 110px;
+    top: 136px;
+    width: 162px;
+    height: 35px;
+    font-family: georgia;
+    font-size: 12px;
+    z-index: 2;
+}
+
+.keyboardSupport {
+    position: absolute;
+    left: 276px;
+    top: 128px;
+    width: 62px;
+    height: 35px;
+    background-image: url(../images/guitar.png);
+    cursor: pointer;
+    z-index: 9;
+}

@@ -1,8 +1,6 @@
 
 import {SingleColor, ColorConstant} from '../util/Color';
 
-import sound3n from '../../music/3n.ogg';
-
 export default [
     {
         x1: 30,
@@ -10,7 +8,7 @@ export default [
         y: 23,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.R, 190),
-        audio: sound3n
+        audio: "music/3n.ogg"
     },
     {
         x1: 30,
@@ -18,7 +16,7 @@ export default [
         y: 37,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.G, 190),
-        audio: sound3n
+        audio: "music/3n.ogg"
     },
     {
         x1: 65,
@@ -26,7 +24,7 @@ export default [
         y: 66,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.B, 150),
-        audio: sound3n
+        audio: "music/3n.ogg"
     },
     {
         x1: 30,
@@ -34,7 +32,7 @@ export default [
         y: 81,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.R, 160),
-        audio: sound3n
+        audio: "music/3n.ogg"
     },
     {
         x1: 30,
@@ -42,7 +40,7 @@ export default [
         y: 96,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.G, 190),
-        audio: sound3n
+        audio: "music/3n.ogg"
     },
     {
         x1: 30,
@@ -50,6 +48,6 @@ export default [
         y: 111,
         lineWidth: 1,
         color: new SingleColor(ColorConstant.B, 190),
-        audio: sound3n
+        audio: "music/3n.ogg"
     }
 ];

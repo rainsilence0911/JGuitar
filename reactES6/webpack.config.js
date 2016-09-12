@@ -4,10 +4,12 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var values = require('postcss-modules-values');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var isDebug = false;
 
 module.exports = {
     entry: [
-        "webpack/hot/dev-server",    // // [webpack-dev-server config] hot module refresh require
+        "webpack/hot/dev-server",    // [webpack-dev-server config] hot module refresh require
         "./app/main.js"
     ],
     output: {
@@ -25,7 +27,8 @@ module.exports = {
             loader: "html-loader"
         }, {
             test: /\.css$/,
-            loader: "style-loader!css-loader?modules!postcss-loader"
+            loader: isDebug ? "style-loader!css-loader?modules!postcss-loader" :
+            					ExtractTextPlugin.extract("style-loader", "css-loader?modules!postcss-loader")
         }, {
             test: /\.less/,
             loader: 'style-loader!css-loader!less-loader'
@@ -44,6 +47,9 @@ module.exports = {
     },
     plugins: [
         new webpack.NoErrorsPlugin(),
-        new webpack.HotModuleReplacementPlugin()    // // [webpack-dev-server config] hot module refresh require
+        new ExtractTextPlugin("[name].css", {
+            allChunks: true
+        }),
+        new webpack.HotModuleReplacementPlugin()    // [webpack-dev-server config] hot module refresh require
     ]
 };

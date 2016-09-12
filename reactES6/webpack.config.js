@@ -34,8 +34,8 @@ module.exports = {
             loader : "file-loader"
         }]
     },
-    "devtool" : "eval",
-    "debug" : true,
+    devtool: "eval",
+    debug: true,
     postcss: [
         values
     ],

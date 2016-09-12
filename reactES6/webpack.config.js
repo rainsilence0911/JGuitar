@@ -11,27 +11,27 @@ module.exports = {
         "./app/main.js"
     ],
     output: {
-        path : BUILD_PATH,
+        path: BUILD_PATH,
         publicPath: "/assets/",        // [webpack-dev-server config]
-        filename : "[name].js"
+        filename: "[name].js"
     },
     module: {
-        loaders : [ {
-            test : /\.js$/,
-            exclude : /node_modules/,
-            loader : 'babel-loader'
+        loaders: [ {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
         }, {
-            test : /\.html$/,
-            loader : "html-loader"
+            test: /\.html$/,
+            loader: "html-loader"
         }, {
-            test : /\.css$/,
-            loader : "style-loader!css-loader?modules!postcss-loader"
+            test: /\.css$/,
+            loader: "style-loader!css-loader?modules!postcss-loader"
         }, {
-            test : /\.less/,
-            loader : 'style-loader!css-loader!less-loader'
+            test: /\.less/,
+            loader: 'style-loader!css-loader!less-loader'
         }, {
-            test : [ /\.png$/, /\.jpg$/, /\.jpeg$/, /\.gif$/, /\.svg$/ ],
-            loader : "file-loader"
+            test: [ /\.png$/, /\.jpg$/, /\.jpeg$/, /\.gif$/, /\.svg$/ ],
+            loader: "file-loader"
         }]
     },
     devtool: "eval",

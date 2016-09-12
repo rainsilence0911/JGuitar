@@ -2,6 +2,7 @@
 import Task from '../util/Task';
 
 import {ColorConstant} from '../util/Color';
+import ESUtil from '../util/ESUtil';
 
 class ShakeTask extends Task {
 
@@ -80,7 +81,7 @@ export default class Chord {
         }
 
         let timer = this.timer;
-        timer.addTask(this.id, taskList[Symbol.iterator]());
+        timer.addTask(this.id, ESUtil.getIterator(taskList));
         timer.start();
     }
 

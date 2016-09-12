@@ -38,7 +38,7 @@ module.exports = {
     "debug" : true,
     postcss: [
         values
-      ],
+    ],
     resolve : {
         extensions : [ '', '.js', '.json' ]
     },

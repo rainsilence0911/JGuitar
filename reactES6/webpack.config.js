@@ -6,16 +6,16 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var values = require('postcss-modules-values');
 
 module.exports = {
-    entry : [
+    entry: [
         "webpack/hot/dev-server",    // // [webpack-dev-server config] hot module refresh require
         "./app/main.js"
     ],
-    output : {
+    output: {
         path : BUILD_PATH,
         publicPath: "/assets/",        // [webpack-dev-server config]
         filename : "[name].js"
     },
-    module : {
+    module: {
         loaders : [ {
             test : /\.js$/,
             exclude : /node_modules/,
@@ -39,10 +39,10 @@ module.exports = {
     postcss: [
         values
     ],
-    resolve : {
+    resolve: {
         extensions : [ '', '.js', '.json' ]
     },
-    plugins : [
+    plugins: [
         new webpack.NoErrorsPlugin(),
         new webpack.HotModuleReplacementPlugin()    // // [webpack-dev-server config] hot module refresh require
     ]

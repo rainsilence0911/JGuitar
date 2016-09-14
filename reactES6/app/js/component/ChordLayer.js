@@ -122,6 +122,8 @@ export default class ChordLayer extends React.Component {
         let current = soundIter.next();
 
         if (current.done) {
+            EventManager.fire(Events.REPLAY_FINISHED);
+            this.isReplaying = false;
             return;
         }
 

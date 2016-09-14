@@ -10,7 +10,7 @@
 }
 
 .background {
-    composes: spiritBase;
+    composes: spiritBase;   /* css-loader compose */
     background-repeat: no-repeat;
     z-index: 0;
     width: 100%;

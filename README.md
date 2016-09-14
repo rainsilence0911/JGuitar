@@ -11,7 +11,7 @@
 
 
 ##效果图
-![image](https://github.com/rainsilence0911/JGuitar/blob/master/standalone/images/snapshot20160914.png)
+![image](https://github.com/rainsilence0911/JGuitar/blob/master/standalone/images/snapshot20160914.PNG)
 
 ## What is standalone version?
 standalone版本比较早，是在电吉他发布后4天制作的（在google代码开放前），支持全浏览器（IE6－IE8能看到动画，但没有声音）。

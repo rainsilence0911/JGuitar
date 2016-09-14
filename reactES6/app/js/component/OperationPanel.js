@@ -21,6 +21,8 @@ export default class OperationPanel extends React.Component {
             isKeyBoardMode: false
         };
 
+        this.isRecordRunning = false;
+
         this.keydownHandlerProxy = this.keyDownHandler.bind(this);
 
         EventManager.register(Events.REPLAY_FINISHED, this.onReplayFinished.bind(this));
@@ -29,12 +31,18 @@ export default class OperationPanel extends React.Component {
     onRecordClick(event) {
 
         let isRecording = this.state.isRecording;
+
+        if (isRecording === false && this.isRecordRunning) {
+            return;
+        }
+
         this.refs.statusBoard.innerHTML = isRecording ? "Replaying" : "Recording";
 
         if (isRecording) {
             EventManager.fire(Events.REPLAY_AUDIO);
         } else {
             EventManager.fire(Events.RECORD_AUDIO);
+            this.isRecordRunning = true;
         }
 
         this.setState({
@@ -59,6 +67,7 @@ export default class OperationPanel extends React.Component {
 
     onReplayFinished() {
         this.refs.statusBoard.innerHTML = "";
+        this.isRecordRunning = false;
     }
 
     keyDownHandler(e) {

@@ -9,7 +9,8 @@ var configs = [
         y: 23,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.R, 190),
-        audio: audio3n
+        audio: audio3n,
+        keyCode: 49
     },
     {
         x1: 30,
@@ -17,7 +18,8 @@ var configs = [
         y: 37,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.G, 190),
-        audio: audio3n
+        audio: audio3n,
+        keyCode: 50
     },
     {
         x1: 65,
@@ -25,7 +27,8 @@ var configs = [
         y: 66,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.B, 150),
-        audio: audio3n
+        audio: audio3n,
+        keyCode: 51
     },
     {
         x1: 30,
@@ -33,7 +36,8 @@ var configs = [
         y: 81,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.R, 160),
-        audio: audio3n
+        audio: audio3n,
+        keyCode: 52
     },
     {
         x1: 30,
@@ -41,7 +45,8 @@ var configs = [
         y: 96,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.G, 190),
-        audio: audio3n
+        audio: audio3n,
+        keyCode: 53
     },
     {
         x1: 30,
@@ -49,7 +54,44 @@ var configs = [
         y: 111,
         lineWidth: 1,
         color: new SingleColor(ColorConstant.B, 190),
-        audio: audio3n
+        audio: audio3n,
+        keyCode: 54
+    },
+    {
+        x1: 360,
+        x2: 434,
+        y: 66,
+        lineWidth: 1,
+        color: new SingleColor(ColorConstant.R, 190),
+        audio: audio3n,
+        keyCode: 55
+    },
+    {
+        x1: 360,
+        x2: 434,
+        y: 81,
+        lineWidth: 1,
+        color: new SingleColor(ColorConstant.G, 140),
+        audio: audio3n,
+        keyCode: 56
+    },
+    {
+        x1: 330,
+        x2: 404,
+        y: 95,
+        lineWidth: 1,
+        color: new SingleColor(ColorConstant.B, 155),
+        audio: audio3n,
+        keyCode: 57
+    },
+    {
+        x1: 360,
+        x2: 434,
+        y: 111,
+        lineWidth: 1,
+        color: new SingleColor(ColorConstant.R, 205),
+        audio: audio3n,
+        keyCode: 48
     }
 ]
 

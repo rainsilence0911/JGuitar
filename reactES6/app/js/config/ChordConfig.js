@@ -62,7 +62,7 @@ var configs = [
         x2: 434,
         y: 66,
         lineWidth: 1,
-        color: new SingleColor(ColorConstant.R, 190),
+        color: new SingleColor(ColorConstant.R, 100),
         audio: audio3n,
         keyCode: 55
     },
@@ -71,7 +71,7 @@ var configs = [
         x2: 434,
         y: 81,
         lineWidth: 1,
-        color: new SingleColor(ColorConstant.G, 140),
+        color: new SingleColor(ColorConstant.G, 110),
         audio: audio3n,
         keyCode: 56
     },
@@ -80,7 +80,7 @@ var configs = [
         x2: 404,
         y: 95,
         lineWidth: 1,
-        color: new SingleColor(ColorConstant.B, 155),
+        color: new SingleColor(ColorConstant.B, 99),
         audio: audio3n,
         keyCode: 57
     },
@@ -89,7 +89,7 @@ var configs = [
         x2: 434,
         y: 111,
         lineWidth: 1,
-        color: new SingleColor(ColorConstant.R, 205),
+        color: new SingleColor(ColorConstant.R, 90),
         audio: audio3n,
         keyCode: 48
     }

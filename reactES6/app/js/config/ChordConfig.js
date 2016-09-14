@@ -1,14 +1,15 @@
 
 import {SingleColor, ColorConstant} from '../util/Color';
+import audio3n from '../../music/3n.ogg';
 
-export default [
+var configs = [
     {
         x1: 30,
         x2: 105,
         y: 23,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.R, 190),
-        audio: "music/3n.ogg"
+        audio: audio3n
     },
     {
         x1: 30,
@@ -16,7 +17,7 @@ export default [
         y: 37,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.G, 190),
-        audio: "music/3n.ogg"
+        audio: audio3n
     },
     {
         x1: 65,
@@ -24,7 +25,7 @@ export default [
         y: 66,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.B, 150),
-        audio: "music/3n.ogg"
+        audio: audio3n
     },
     {
         x1: 30,
@@ -32,7 +33,7 @@ export default [
         y: 81,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.R, 160),
-        audio: "music/3n.ogg"
+        audio: audio3n
     },
     {
         x1: 30,
@@ -40,7 +41,7 @@ export default [
         y: 96,
         lineWidth: 2,
         color: new SingleColor(ColorConstant.G, 190),
-        audio: "music/3n.ogg"
+        audio: audio3n
     },
     {
         x1: 30,
@@ -48,6 +49,13 @@ export default [
         y: 111,
         lineWidth: 1,
         color: new SingleColor(ColorConstant.B, 190),
-        audio: "music/3n.ogg"
+        audio: audio3n
     }
-];
+]
+
+// create id
+configs.forEach(function(config) {
+    config.id = String(config.x1) + String(config.x2) + String(config.y);
+});
+
+export default configs;

@@ -35,8 +35,8 @@ es6版本用了webpack+hot deploy plugin作为开发环境
 
 1）进入webpack.config.js的目录
 
-2) npm install
+2）npm install
 
-3) npm run hot-dev-server
+3）npm run hot-dev-server
 
-4) open browser and input http://localhost:8080
+4）open browser and input http://localhost:8080

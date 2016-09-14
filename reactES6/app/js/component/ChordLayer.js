@@ -7,6 +7,8 @@ import Timer from '../util/Timer';
 import configs from '../config/ChordConfig';
 
 import Chord from '../part/Chord';
+import EventManager from '../event/EventManager';
+import Events from '../event/Events';
 
 import style from '../../css/style.css';
 
@@ -22,7 +24,7 @@ export default class ChordLayer extends React.Component {
     }
 
     componentDidMount() {
-    	let graphHelper = new GraphHelper(this.refs.canvas);
+        let graphHelper = new GraphHelper(this.refs.canvas);
 
         let timer = new Timer();
 
@@ -38,7 +40,7 @@ export default class ChordLayer extends React.Component {
         }).bind(this));
 
         for (let i = 0; i < configs.length; i++) {
-            var chord = new Chord(i, graphHelper, configs[i], timer);
+            var chord = new Chord(graphHelper, configs[i], timer);
             chord.draw();
             this.chords.push(chord);
         }
@@ -46,9 +48,9 @@ export default class ChordLayer extends React.Component {
 
     handleMouseMove(e) {
 
-    	let event = e.nativeEvent;
+        let event = e.nativeEvent;
 
-    	let {x: mouseX, y: mouseY} = PositionUtil.getLayerXY(event, this.refs.canvas);
+        let {x: mouseX, y: mouseY} = PositionUtil.getLayerXY(event, this.refs.canvas);
 
         if (!this.lastY) {
             this.lastY = mouseY;
@@ -66,6 +68,9 @@ export default class ChordLayer extends React.Component {
 
             if (chord.hitTest(this.lastY, mouseX, mouseY)) {
                 chord.play(this.lastY > mouseY, mouseX);
+                EventManager.fire(Events.PLAY_AUDIO, {
+                    id: chord.id
+                });
             }
         }
 

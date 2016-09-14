@@ -1,7 +1,12 @@
 
-import style from '../../css/style.css';
-
 import React from 'react';
+
+import ESUtil from '../util/ESUtil';
+
+import EventManager from '../event/EventManager';
+import Events from '../event/Events';
+
+import style from '../../css/style.css';
 
 export default class OperationPanel extends React.Component {
     constructor() {
@@ -15,12 +20,22 @@ export default class OperationPanel extends React.Component {
             isRecording: false,
             isKeyBoardMode: false
         };
+
+        this.keydownHandlerProxy = this.keyDownHandler.bind(this);
+
+        EventManager.register(Events.REPLAY_FINISHED, this.onReplayFinished.bind(this));
     }
 
     onRecordClick(event) {
 
         let isRecording = this.state.isRecording;
-        this.refs.statusBoard.innerHTML = isRecording ? "" : "Recording";
+        this.refs.statusBoard.innerHTML = isRecording ? "Replaying" : "Recording";
+
+        if (isRecording) {
+            EventManager.fire(Events.REPLAY_AUDIO);
+        } else {
+            EventManager.fire(Events.RECORD_AUDIO);
+        }
 
         this.setState({
             isRecording: !isRecording
@@ -28,8 +43,29 @@ export default class OperationPanel extends React.Component {
     }
 
     onKeyboardSupportClick(event) {
+
+        var isKeyBoardMode = this.state.isKeyBoardMode;
+
+        if (isKeyBoardMode) {
+            ESUtil.removeEventListener(document, 'keydown', this.keydownHandlerProxy);
+        } else {
+            ESUtil.addEventListener(document, 'keydown', this.keydownHandlerProxy);
+        }
+
         this.setState({
-            isKeyBoardMode: !this.state.isKeyBoardMode
+            isKeyBoardMode: !isKeyBoardMode
+        });
+    }
+
+    onReplayFinished() {
+        this.refs.statusBoard.innerHTML = "";
+    }
+
+    keyDownHandler(e) {
+        var event = e || window.event;
+        var keyCode = event.keyCode;
+        EventManager.fire(Events.KEY_DOWN, {
+            keyCode: keyCode
         });
     }
 

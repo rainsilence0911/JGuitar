@@ -21,9 +21,9 @@ class ShakeTask extends Task {
 
 export default class Chord {
 
-    constructor(id, graphHelper, config, timer) {
+    constructor(graphHelper, config, timer) {
         this.limitValue = 5;
-        this.id = "chord-" + id;
+        this.id = config.id;
         this.x1 = config.x1;
         this.x2 = config.x2;
         this.middleX = (config.x2 - config.x1) / 2;
@@ -45,7 +45,7 @@ export default class Chord {
                                     this.y,
                                     (this.x1 + this.x2) / 2,
                                     cpY + this.y, color,
-                                    (this.x1 + this.x2) / 10,
+                                    ((this.x2 - this.x1) / 4.5),
                                     this.lineWidth);
     }
 
@@ -61,7 +61,14 @@ export default class Chord {
 
     play(isReverse, currentX) {
 
-        let percent = 1 - Math.abs((currentX - this.x1) - this.middleX) / this.middleX;
+        let percent;
+
+        if (currentX == null) {
+            percent = 1;
+        } else {
+            percent = 1 - Math.abs((currentX - this.x1) - this.middleX) / this.middleX;
+        }
+
         let cpyList = this.createCpy(Math.ceil(percent * this.limitValue), .5, isReverse);
         let colorList = this.createColor(this.colorInfo, cpyList.length);
 

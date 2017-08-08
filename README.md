@@ -10,7 +10,7 @@
 3）支持键盘
 
 
-##效果图
+## 效果图
 ![image](https://github.com/rainsilence0911/JGuitar/blob/master/standalone/images/snapshot20160914.PNG)
 
 ## 技术架构
